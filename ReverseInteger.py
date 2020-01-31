@@ -19,11 +19,22 @@ print(Solution().reverse(2**31))
 '''
 
 
-class Solution:
-    def reverse(self, x):
-    	  return int(str(x)[::-1]) if -2**31 <= x <= 2**31 - 1 else 0
+class Solution(object):
+    @staticmethod
+    def reverse(x):
+        # return int(str(x)[::-1]) if -2**31 <= x < 2**31 else 0
+        
+        if not -2**31 <= x < 2**31:
+            return 0
 
-print(Solution().reverse(2**30))
+        reverse = 0
+        while x > 0:
+            reverse = reverse * 10 + x % 10
+            x //= 10
+        return reverse
+
+
+print(Solution.reverse(123))
 # 321
-print(Solution().reverse(2**31))
+print(Solution.reverse(2**31))
 # 0

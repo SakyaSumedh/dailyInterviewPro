@@ -19,10 +19,16 @@ class Solution:
 print Solution().reverseWords("The cat in the hat")
 # ehT tac ni eht tah
 '''
+import time
+
 
 class Solution:
-    def reverseWords(self, string):
-        return " ".join(list(map(lambda x: x[::-1], string.split(' '))))
+    @staticmethod
+    def reverseWords(string):
+        # return " ".join(list(map(lambda x: x[::-1], string.split(' '))))
+        return " ".join([x[::-1] for x in string.split(' ')])
 
 
-print(Solution().reverseWords("The cat in the hat"))
+start = time.time()
+print(Solution.reverseWords("The cat in the hat"))
+print(time.time() - start)

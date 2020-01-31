@@ -30,19 +30,19 @@ print s.max()
 
 class MinMaxStack:
     def __init__(self):
-        self.stack = []
+        self._stack = []
 
     def push(self, val):
-        self.stack.append(val)
+        self._stack.append(val)
 
     def pop(self):
-        self.stack = self.stack[:-1]
+        self._stack.pop()
 
     def max(self):
-        return max(self.stack)
+        return max(self._stack)
         
     def min(self):
-     return min(self.stack)
+     return min(self._stack)
 
 s = MinMaxStack()
 s.push(1)

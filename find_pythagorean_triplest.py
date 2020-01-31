@@ -14,13 +14,17 @@ def findPythagoreanTriplets(nums):
 print findPythagoreanTriplets([3, 12, 5, 13])
 # True
 '''
+import time
 
 def find_pythagorean_triplets(nums):
-	for i in range(len(nums) - 1):
-		for j in range(1, len(nums)):
+	length = len(nums)
+	for i in range(length - 1):
+		for j in range(1, length):
 			square_root = (nums[i] ** 2 + nums[j] ** 2) ** (1/2)
 			if square_root in nums:
 				return True
 	return False
 
+start = time.time()
 print(find_pythagorean_triplets([15, 8, 6, 10]))
+print(time.time() - start)

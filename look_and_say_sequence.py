@@ -12,27 +12,27 @@ Each consecutive value describes the prior value.
 
 Your task is, return the nth term of this sequence.
 '''
-
+import time
 
 def sequence(nth_term):
     result_seq = '1'
     for i in range(1, nth_term):
         seq = ''
         index = 0
-        j = index
-        while j < len(result_seq):
+        length = len(result_seq)
+        while index < length:
             counter = 1
-            k = j + 1
-            if k < len(result_seq):
-                while result_seq[index] == result_seq[k]:
-                    counter += 1
-                    k += 1
-                    if k >= len(result_seq):
-                        break
+            k = index + 1
+            while k < length and result_seq[index] == result_seq[k]:
+                counter += 1
+                k += 1
             seq += (str(counter) + result_seq[index])
-            j = k
+            index = k
         result_seq = seq
         print(seq)
     return result_seq
 
-print("End Result: ", sequence(4))
+start = time.time()
+print("End Result: ", sequence(7))
+print(time.time() - start)
+
