@@ -42,7 +42,7 @@ class MinMaxStack:
         return max(self._stack)
         
     def min(self):
-     return min(self._stack)
+        return min(self._stack)
 
 s = MinMaxStack()
 s.push(1)
